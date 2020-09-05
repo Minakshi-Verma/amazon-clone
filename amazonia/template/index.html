@@ -9,7 +9,10 @@
         <div class = grid-container>
             <header class = "header">
                 <div class= "brand" >
-                <a href = "index.html"> amazonia</a>
+                    <button onclick="openMenu()">
+                       &#9776; 
+                    </button>
+                    <a href = "index.html"> amazonia</a>
                 </div>
                 <div class = "header-links">
                     <a href = "cart.html">Cart</a>
@@ -17,21 +20,147 @@
                 </div>
                
             </header>
-            <!-- <aside>
-                Shopping Categories
-            </aside> -->
+            <aside class= "sidebar">
+                <h3>Categories</h3>
+                <button class = "sidebar-close-button" onclick="closeMenu()">X</button>
+                <ul>
+                    <li>
+                        <a href= "index.html">Dresses</a>
+                    </li>
+                    <li>
+                        <a href= "index.html">Tops</a>
+                    </li>
+                    <li>
+                        <a href= "index.html">Bottoms</a>
+                    </li>
+                    <li>
+                        <a href= "index.html">Accessories</a>
+                    </li>
+                </ul>
+            </aside>
             <main class= "main">
                 <div class = "content">
                     <ul class = "products">                        
                         <li>
                             <div class ="product">
                                 <img class= "product-image" src = "./images/d1.jpg" alt = "product1">
-                                <div class = "product-name">Dress</div>
+                                <div class = "product-name">
+                                    <a href = "product.html">Cotton Printed Maxi Dress</a>
+                                </div>
                                 <div class = "product-brand">Athleta</div>
-                                <div class = "price">$60</div>
+                                <div class = "product-price">$48</div>
+                                <div class = "product-rating">4.6 stars(15 Reviews)</div>
                                 
                             </div>
-                        </li>                   
+                        </li>
+                        <li>
+                            <div class ="product">
+                                <img class= "product-image" src = "./images/d2.jpg" alt = "product1">
+                                <div class = "product-name">
+                                    <a href = "product.html">Sequined Lace Contrast Dress</a>
+                                </div>
+                                <div class = "product-brand">Athleta</div>
+                                <div class = "product-price">$60</div>
+                                <div class = "product-rating">4.5 stars(12 Reviews)</div>
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <div class ="product">
+                                <img class= "product-image" src = "./images/d3.jpg" alt = "product1">
+                                <div class = "product-name">
+                                    <a href = "product.html">A-Line Lace Jacket Dress</a>
+                                </div>
+                                <div class = "product-brand">Alex Evenings</div>
+                                <div class = "product-price">$55</div>
+                                <div class = "product-rating">4.8 stars(8 Reviews)</div>
+                                
+                            </div>
+                        </li>              
+                        <li>
+                            <div class ="product">
+                                <img class= "product-image" src = "./images/d4.jpg" alt = "product1">
+                                <div class = "product-name">
+                                    <a href = "product.html">Metallic A-Line Dress and Ruffled Jacket</a>
+                                </div>
+                                <div class = "product-brand">Ralph Lauren</div>
+                                <div class = "product-price">$75</div>
+                                <div class = "product-rating">4.6 stars(7 Reviews)</div>
+                                
+                            </div>
+                        </li>              
+                        <li>
+                            <div class ="product">
+                                <img class= "product-image" src = "./images/d5.jpg" alt = "product1">
+                                <div class = "product-name">
+                                    <a href = "product.html">Sleeveless Metallic Dress and Jacket</a>
+                                </div>
+                                <div class = "product-brand">R&M Richards</div>
+                                <div class = "product-price">$88</div>
+                                <div class = "product-rating">4.7 stars(45 Reviews)</div>
+                                
+                            </div>
+                        </li>              
+                        <li>
+                            <div class ="product">
+                                <img class= "product-image" src = "./images/d6.jpg" alt = "product1">
+                                <div class = "product-name">
+                                    <a href = "product.html">Sleeveless V-Neck Side Tie Wrap</a>
+                                </div>
+                                <div class = "product-brand">Ann Klien</div>
+                                <div class = "product-price">$75</div>
+                                <div class = "product-rating">4.4 stars(4 Reviews)</div>
+                                
+                            </div>
+                        </li>              
+                        <li>
+                            <div class ="product">
+                                <img class= "product-image" src = "./images/d7.jpg" alt = "product1">
+                                <div class = "product-name">
+                                    <a href = "product.html">Polka Dots Flare Dress</a>
+                                </div>
+                                <div class = "product-brand">Guess</div>
+                                <div class = "product-price">$42</div>
+                                <div class = "product-rating">4.8 stars(12 Reviews)</div>
+                                
+                            </div>
+                        </li>              
+                        <li>
+                            <div class ="product">
+                                <img class= "product-image" src = "./images/d8.jpg" alt = "product1">
+                                <div class = "product-name">
+                                    <a href = "product.html">Rose-Print Flutter Sleeve Dress</a>
+                                </div>
+                                <div class = "product-brand">Tommy Hilfiger</div>
+                                <div class = "product-price">$51</div>
+                                <div class = "product-rating">5 stars(2 Reviews)</div>
+                                
+                            </div>
+                        </li>              
+                        <li>
+                            <div class ="product">
+                                <img class= "product-image" src = "./images/d9.jpg" alt = "product1">
+                                <div class = "product-name">
+                                    <a href = "product.html">Tie-Neck Scuba Crepe Dress</a>
+                                </div>
+                                <div class = "product-brand">Calvin Klein</div>
+                                <div class = "product-price">$68</div>
+                                <div class = "product-rating">5 stars(3 Reviews)</div>
+                                
+                            </div>
+                        </li>              
+                        <li>
+                            <div class ="product">
+                                <img class= "product-image" src = "./images/d10.jpg" alt = "product1">
+                                <div class = "product-name">
+                                    <a href = "product.html">Double Breasted Skirt Sheath Dress</a>
+                                </div>
+                                <div class = "product-brand">DKNY</div>
+                                <div class = "product-price">$65</div>
+                                <div class = "product-rating">4.6 stars(19 Reviews)</div>
+                                
+                            </div>
+                        </li>                                               
                     </ul>
                 </div>
                
@@ -40,6 +169,15 @@
                 All right reserved.
             </footer>
         </div>
+        <script>
+            function openMenu(){
+                document.querySelector(".sidebar").classList.add("open")
+            }
+
+            function closeMenu(){
+                document.querySelector(".sidebar").classList.remove("open")
+            }
+        </script>
         
     </body>
 
