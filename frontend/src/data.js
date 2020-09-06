@@ -1,6 +1,7 @@
 export default  {
     products:[
         {
+            _id: '1',
             name: "Cotton Printed Maxi Dress",
             category: "Dresses",
             image:"/images/d1.jpg",
@@ -10,6 +11,7 @@ export default  {
             numReviews: 15
         },
         {
+            _id: '2',
             name: "Sequined Lace Contrast Dress",
             category: "Dresses",
             image:"/images/d2.jpg",
@@ -19,6 +21,7 @@ export default  {
             numReviews: 12
         },
         {
+            _id: '3',
             name: "A-Line Lace Jacket Dress",
             category: "Dresses",
             image:"/images/d3.jpg",
@@ -28,6 +31,7 @@ export default  {
             numReviews: 8
         },
         {
+            _id: '4',
             name: "Metallic A-Line Dress and Ruffled Jacket",
             category: "Dresses",
             image:"/images/d4.jpg",
@@ -37,6 +41,7 @@ export default  {
             numReviews: 7
         },
         {
+            _id: '5',
             name: "Sleeveless Metallic Dress and Jacket",
             category: "Dresses",
             image:"/images/d5.jpg",
@@ -46,6 +51,7 @@ export default  {
             numReviews: 45
         },
         {
+            _id: '6',
             name: "Cotton Printed Maxi Dress",
             category: "Dresses",
             image:"/images/d6.jpg",
@@ -54,6 +60,7 @@ export default  {
             rating: 4.4,            
             numReviews: 4        },
         {
+            _id: '7',
             name: "Polka Dots Flare Dress",
             category: "Dresses",
             image:"/images/d7.jpg",
@@ -63,6 +70,7 @@ export default  {
             numReviews: 12
         },
         {
+            _id: '8',
             name: "Rose-Print Flutter Sleeve Dress",
             category: "Dresses",
             image:"/images/d8.jpg",
@@ -72,6 +80,7 @@ export default  {
             numReviews: 2
         },
         {
+            _id: '9',
             name: "Tie-Neck Scuba Crepe Dress",
             category: "Dresses",
             image:"/images/d9.jpg",
@@ -81,6 +90,7 @@ export default  {
             numReviews: 3
         },
         {
+            _id: '10',
             name: "Double Breasted Skirt Sheath Dress",
             category: "Dresses",
             image:"/images/d10.jpg",
