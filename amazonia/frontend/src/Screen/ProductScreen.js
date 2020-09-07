@@ -20,7 +20,7 @@ function ProductScreen(props){
   
   return(
      <div>
-        <div>
+        <div className="back-to-result">
             <Link to="/">Back to results</Link>
         </div>
         <div className = "details">
@@ -36,7 +36,7 @@ function ProductScreen(props){
                         {product.rating} Stars ({product.numReviews} Reviews)
                     </li>
                     <li>
-                        <b>${product.price}</b>
+                        Price: <b>${product.price}</b>
                     </li>
                     <li>
                         {product.description}
@@ -46,7 +46,7 @@ function ProductScreen(props){
             <div className= "details-action">
                 <ul>
                     <li>
-                        Price: {product.price}
+                        Price: ${product.price}
                     </li>
                     <li>
                         Status: {product.status}
@@ -61,7 +61,7 @@ function ProductScreen(props){
                         </select>
                     </li>
                     <li>
-                        <button>Add to Cart</button>
+                        <button className= "button primary">Add to Cart</button>
                     </li>
                 </ul>
 
