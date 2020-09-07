@@ -2,22 +2,34 @@ import React, { useState, useEffect } from "react"
 // import data from "../data"
 import { Link } from "react-router-dom";
 import axios from "axios";
+import {useSelector, useDispatch} from "react-redux"
+import {listProducts} from "../actions/productActions"
+
 
 const HomeScreen = (props)=>{
     // console.log(props)
-    const [products, setProducts] = useState([])
+    // const [products, setProducts] = useState([])
 
+    const productList = useSelector(state=>state.productList)
+    const {products, loading, error} = productList
+
+    const dispatch = useDispatch()
     useEffect(()=>{ 
-        axios
-            .get(`/api/products`)
-            .then(res=>{
-             console.log(res.data)
-             setProducts(res.data)
-            })
-            .catch(err=>{
-                console.log(err)
-            })
+        dispatch(listProducts())
+        
     }, [])
+
+    // useEffect(()=>{ 
+    //     axios
+    //         .get(`/api/products`)
+    //         .then(res=>{
+    //          console.log(res.data)
+    //          setProducts(res.data)
+    //         })
+    //         .catch(err=>{
+    //             console.log(err)
+    //         })
+    // }, [])
 
     // useEffect(() => {
     //     const fetchData = async () =>{
@@ -31,10 +43,12 @@ const HomeScreen = (props)=>{
     //     }
     // })
 
-    return(        
+    return(  
+        loading ? <div> Loading...</div> : 
+        error ? <div>{error}</div> :    
             <ul className="products">  
                         {
-                            products.map(product=>
+                            products && products.map(product=>
                             <li key = {product._id}>
                             <div className="product">                                                          
                                 <Link to={'/product/'+ product._id}>
