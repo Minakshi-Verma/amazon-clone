@@ -8,7 +8,8 @@ export default  {
             brand: "Athleta",
             price: 48,
             rating: 4.6,            
-            numReviews: 15
+            numReviews: 15,
+            countInStock: 10
         },
         {
             _id: '2',
@@ -18,7 +19,8 @@ export default  {
             brand: "DKNY",
             price: 60,
             rating: 4.5,            
-            numReviews: 12
+            numReviews: 12,
+            countInStock: 8
         },
         {
             _id: '3',
@@ -28,7 +30,8 @@ export default  {
             brand: "Alex Evenings",
             price: 55,
             rating: 4.8,            
-            numReviews: 8
+            numReviews: 8,
+            countInStock: 0
         },
         {
             _id: '4',
@@ -38,7 +41,8 @@ export default  {
             brand: "Ralph Lauren",
             price: 75,
             rating: 4.6,            
-            numReviews: 7
+            numReviews: 7,
+            countInStock: 10
         },
         {
             _id: '5',
@@ -48,7 +52,8 @@ export default  {
             brand: "R&M Richards",
             price: 88,
             rating: 4.7,            
-            numReviews: 45
+            numReviews: 45,
+            countInStock: 6
         },
         {
             _id: '6',
@@ -58,7 +63,8 @@ export default  {
             brand: "Ann Klien",
             price: 75,
             rating: 4.4,            
-            numReviews: 4        },
+            numReviews: 4,
+            countInStock: 12       },
         {
             _id: '7',
             name: "Polka Dots Flare Dress",
@@ -67,7 +73,8 @@ export default  {
             brand: "Guess",
             price: 42,
             rating: 4.8,            
-            numReviews: 12
+            numReviews: 12,
+            countInStock: 5
         },
         {
             _id: '8',
@@ -77,7 +84,8 @@ export default  {
             brand: "Tommy Hilfiger",
             price: 51,
             rating: 5.0,            
-            numReviews: 2
+            numReviews: 2,
+            countInStock: 5
         },
         {
             _id: '9',
@@ -87,7 +95,8 @@ export default  {
             brand: "Calvin Klein",
             price: 68,
             rating: 4.9,            
-            numReviews: 3
+            numReviews: 3,
+            countInStock: 10
         },
         {
             _id: '10',
@@ -97,7 +106,8 @@ export default  {
             brand: "DKNY",
             price: 65,
             rating: 4.6,            
-            numReviews: 19
+            numReviews: 19,
+            countInStock: 9
         },
 ]
 }

@@ -8,7 +8,7 @@ React.js || Redux || Node.js || Express || CSS
 react-router-dom
 redux
 react-redux
-thunk  // to perform async operation in redux since redux runs    
+redux-thunk  // to perform async operation in redux since redux runs    
         synchronously by default
 Axios
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 // import data from "../data"
 import { Link } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 import {useSelector, useDispatch} from "react-redux"
 import {listProducts} from "../actions/productActions"
 
@@ -10,8 +10,10 @@ const HomeScreen = (props)=>{
     // console.log(props)
     // const [products, setProducts] = useState([])
 
+    //useSelector hook: an alternate to connect and mapStateToProps()
     const productList = useSelector(state=>state.productList)
     const {products, loading, error} = productList
+    // console.log(product)
 
     const dispatch = useDispatch()
     useEffect(()=>{ 
@@ -44,6 +46,7 @@ const HomeScreen = (props)=>{
     // })
 
     return(  
+        
         loading ? <div> Loading...</div> : 
         error ? <div>{error}</div> :    
             <ul className="products">  
@@ -63,7 +66,8 @@ const HomeScreen = (props)=>{
                             </div>
                         </li>
                         )}                                                    
-                        </ul>      
+                        </ul>
+                        
     )
 }
 
