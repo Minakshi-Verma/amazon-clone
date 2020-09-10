@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter, Route, Link} from "react-router-dom";
 import HomeScreen from "./screen/HomeScreen";
 import ProductScreen from "./screen/ProductScreen"
+import CartScreen from "./screen/CartScreen"
 import './App.css';
 
 
@@ -50,7 +51,9 @@ document.querySelector(".sidebar").classList.remove("open")
                 <main className= "main">
                     <div className="content">
                         <Route path="/product/:id" component={ProductScreen} />
+                        <Route path= "/cart/:id?" component = {CartScreen}/>
                         <Route path="/" exact={true} component={HomeScreen} />
+                      
                        
                       
                     </div>                
