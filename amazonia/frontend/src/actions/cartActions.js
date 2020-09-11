@@ -1,6 +1,6 @@
 
 import axios from "axios"
-import { CART_ADD_ITEM } from "../constants/cartConstants"
+import { CART_ADD_ITEM, CART_REMOVE_ITEM} from "../constants/cartConstants"
 
 
 //addToCart action that would be dispatched to reducer
@@ -24,4 +24,9 @@ const addToCart = (productId, qty) => async(dispatch) =>{
     }
 }
 
-export  {addToCart}
+const removeFromCart =(productId)=>async(dispatch)=>{   
+
+    dispatch({type: CART_REMOVE_ITEM, payload: productId})  
+}
+
+export  {addToCart, removeFromCart}

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import{Link} from 'react-router-dom';
-import {addToCart} from "../actions/cartActions"
+import {addToCart, removeFromCart} from "../actions/cartActions"
 import {useSelector, useDispatch} from "react-redux"
 import { CART_ADD_ITEM } from "../constants/cartConstants";
 
@@ -24,7 +24,9 @@ const CartScreen = (props) =>{
         }        
     }, [])
 
-    
+    const removeFromCartHandler = (productId)=>{
+        dispatch(removeFromCart(productId))        
+    }
     return (
         <div className="cart">
             <div className="cart-list">
@@ -51,7 +53,7 @@ const CartScreen = (props) =>{
                             </div>                        
                             <div>
                                 Qty: 
-                                <select>
+                                <select value={item.qty} onChange={(e)=>dispatch(addToCart(item.product, e.target.value))}>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -59,6 +61,7 @@ const CartScreen = (props) =>{
                                     <option value="5">5</option>
                                 </select>
                                 
+                                <button type="button" className= "button" onClick ={()=>removeFromCartHandler(item.product)}>Delete</button>
                             </div>
                         </div>
                         <div className="cart-price">
@@ -73,7 +76,7 @@ const CartScreen = (props) =>{
                     Sub Total({cartItems.reduce((accu, curr)=>accu + curr.qty ,0)}):
                    $ {cartItems.reduce((accu, curr)=>accu+curr.price*curr.qty ,0)}
                 </h3>
-               
+                <button className="button primary" disabled={cartItems.length === 0}>Proceed to Checkout</button>
             </div>                
         </div>
 
