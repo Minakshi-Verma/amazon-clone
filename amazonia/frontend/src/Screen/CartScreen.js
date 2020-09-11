@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import{Link} from 'react-router-dom';
 import {addToCart} from "../actions/cartActions"
 import {useSelector, useDispatch} from "react-redux"
 import { CART_ADD_ITEM } from "../constants/cartConstants";
@@ -22,10 +23,12 @@ const CartScreen = (props) =>{
             dispatch(addToCart(productId, qty))
         }        
     }, [])
+
+    
     return (
-        <div className = "cart">
-            <div className = "cart-list">
-                <ul className = "cart-list-container">
+        <div className="cart">
+            <div className="cart-list">
+                <ul className="cart-list-container">
                     <li>
                         <h3>
                             Shopping Cart
@@ -37,38 +40,41 @@ const CartScreen = (props) =>{
                     {cartItems.length ===0?
                     <div>Cart is Empty</div>:
                     cartItems.map(item=>
-                    <div>
-                        <img src={item.image} alt="product" />
+                    <li>
+                        <div className="cart-image">
+                            <img src={item.image} alt="product" />
+                        </div>    
                         <div className="cart-name">
-                            {item.name}
+                            <div>
+                               <Link to={"/product/"+ productId}>{item.name}</Link> 
+                               {/* <Link to={"/product/"+ item.product}>{item.name}</Link>  */}
+                            </div>                        
+                            <div>
+                                Qty: 
+                                <select>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                
+                            </div>
                         </div>
-                        <div className="cart-name">
-                            Qty: 
-                            <select>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
+                        <div className="cart-price">
+                            ${item.price}
                         </div>
-                        <div>
-                            {item.price}
-                        </div>
-
-                    </div>)
+                    </li>)
                     }
                 </ul>
             </div>
-            <div clasName = "cart-action">
+            <div className="cart-action">
                 <h3>
-                    SubTotal({cartItems.reduce((accu, curr)=>accu + curr.qty ,0)}):
+                    Sub Total({cartItems.reduce((accu, curr)=>accu + curr.qty ,0)}):
                    $ {cartItems.reduce((accu, curr)=>accu+curr.price*curr.qty ,0)}
                 </h3>
-                <button className="button primary" disabled={cartItems.length === 0}>Proceed to Checkout</button>
-            </div>
-
-                
+               
+            </div>                
         </div>
 
     )
