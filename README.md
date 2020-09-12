@@ -36,12 +36,12 @@ npm start
 The _Database Schemas_ for the `users` resources are:
 
 ### userSchema
-| field   | data type        | metadata                 |
-|---------|------------------|--------------------------|
-| name    | string           |required                  |
-| email   | string           |required,unique           |
-| password| string           |required                  |
-| isAdmin | boolean          |required, default:false   |
+| field   | data type        | metadata                    |
+|---------|------------------|-----------------------------|
+| name    | string           |required                     |
+| email   | string           |required,unique,, dropsdups  |
+| password| string           |required                     |
+| isAdmin | boolean          |required, default:false      |
 
 
 
