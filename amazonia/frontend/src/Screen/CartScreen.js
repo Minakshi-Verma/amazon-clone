@@ -7,26 +7,35 @@ import { CART_ADD_ITEM } from "../constants/cartConstants";
 const CartScreen = (props) =>{
     //access the cart from redux store
     const cart = useSelector(state=>state.cart)
-
     const {cartItems} = cart
+
+    const dispatch = useDispatch()
 
     //access the productId 
     const productId = props.match.params.id
+
     //access the query string(qty) 
     const qty = props.location.search ? Number(props.location.search.split("=")[1]): 1
     console.log("qty", qty)
 
-    // const []= useSelector(state=>state.)
-    const dispatch = useDispatch()
+    //checkoutHandler that directs the user to signin Page and redirect to shipping
+   const checkoutHandler = () =>{
+        props.history.push("/signin?redirect=shipping")
+   }
+    
+
+    //removeFromCartHandler that dispatches removeFromCart action
+    const removeFromCartHandler = (productId)=>{
+        dispatch(removeFromCart(productId))        
+    }
+
+    
     useEffect(()=>{
         if(productId){
             dispatch(addToCart(productId, qty))
         }        
     }, [])
-
-    const removeFromCartHandler = (productId)=>{
-        dispatch(removeFromCart(productId))        
-    }
+   
     return (
         <div className="cart">
             <div className="cart-list">
@@ -76,7 +85,7 @@ const CartScreen = (props) =>{
                     Sub Total({cartItems.reduce((accu, curr)=>accu + curr.qty ,0)}):
                    $ {cartItems.reduce((accu, curr)=>accu+curr.price*curr.qty ,0)}
                 </h3>
-                <button className="button primary" disabled={cartItems.length === 0}>Proceed to Checkout</button>
+                <button onClick = {checkoutHandler}className="button primary full-width" disabled={cartItems.length === 0}>Proceed to Checkout</button>
             </div>                
         </div>
 

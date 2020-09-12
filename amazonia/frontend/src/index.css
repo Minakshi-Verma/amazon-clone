@@ -7,6 +7,9 @@ body{
   height: 100vh;
   margin:0;
 }
+button{
+  font-size: 1.6rem;
+}
 #root{
   height: 100%;
 }
@@ -179,9 +182,10 @@ font-weight:bold;
   flex-direction: column
 }
 .button{
-  padding:1rem;
+  padding:0.6rem;
   border: 0.1rem #808080 solid;
   border-radius :0.5rem;
+  background-color:white ;  
   cursor: pointer;  
 }
 .button:hover{
@@ -189,6 +193,9 @@ font-weight:bold;
 }
 .button.primary{
   background-color:#f0c040;
+}
+.full-width{
+  width: 100%;
 }
 
 /*cart */
