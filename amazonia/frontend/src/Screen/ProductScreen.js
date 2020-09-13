@@ -17,9 +17,15 @@ function ProductScreen(props){
    // const product = data.products.find(x => x._id===props.match.params.id);
     // console.log(product)
 
-
+//access productDetails from the reduxstore
+//Analogous to connect's mapStateToProps
+//useSelector hook takes a function that takes the redux store state and returns the piece of state we need
     const productDetails = useSelector(state=>state.productDetails)
+
+//destructured productDetails to get access to product, loading and error states from productDetails
     const {product, loading, error} = productDetails
+
+// useDispatch returns the store's dispatch method so we can manually dispatch actions
     const dispatch = useDispatch()
     
     useEffect(()=>{

@@ -4,6 +4,32 @@ import getToken from '../util';
 
 const router = express.Router();
 
+//Route for register
+router.post("/register", async(req,res)=>{
+    //findone is a filter to check if fields have matching values
+    //when query is sent to database
+    //.findOne()available through mongoose
+    const registerUser = await User.findOne({
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password
+    })
+    if(signinUser){
+        res.send({
+            _id: signinUser.id,
+            name: signinUser.name,
+            email: signinUser.email,
+            isAdmin: signinUser.isAdmin,
+            //token will be sent to authenticate the user
+            token: getToken(signinUser)
+        })
+    }else{
+        res.status(401).send({msg:"Invalid Email or Password"})
+    }
+
+})
+
+//Route for signin
 router.post("/signin", async(req,res)=>{
     //findone is a filter to check if fields have matching values
     //when query is sent to database
@@ -19,7 +45,7 @@ router.post("/signin", async(req,res)=>{
             email: signinUser.email,
             isAdmin: signinUser.isAdmin,
             //token will be sent to authenticate the user
-            token: getToken(user)
+            token: getToken(signinUser)
         })
     }else{
         res.status(401).send({msg:"Invalid Email or Password"})

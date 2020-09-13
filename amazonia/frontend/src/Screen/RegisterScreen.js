@@ -1,17 +1,19 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from "react-router-dom"
 import {useDispatch, useSelector} from 'react-redux';
-import {signin} from '../actions/userActions'
+import {register} from '../actions/userActions'
 
 
 
-function SigninScreen(props){
+function RegisterScreen(props){
+    const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [rePassword, setRePassword] = useState("")
 
-    const userSignin = useSelector(state=> state.userSignin)
-    const {loading, userInfo, error} = userSignin
-    console.log("from signIn screen", userInfo)
+    const userRegister = useSelector(state=> state.userRegister)
+    const {loading, userInfo, error} = userRegister
+    console.log("from Register screen", userInfo)
     const dispatch = useDispatch()
     
     useEffect(()=>{
@@ -21,10 +23,10 @@ function SigninScreen(props){
     //function will run only if userInfo state changes. 
     },[userInfo])
     
-    //dispatch call for signinin action
+    //dispatch call for Registerin action
     const submitHandler = (e) =>{
         e.preventDefault()
-        dispatch(signin(email,password))
+        dispatch(register(email,password))
     }
 
    
@@ -33,11 +35,22 @@ function SigninScreen(props){
         <form onSubmit ={submitHandler}>
             <ul className="form-container">
                 <li>
-                  <h2>Sign In </h2>  
+                  <h2>Create an account </h2>  
                 </li>
                 <li>
                     {loading && <div>Loading...</div>}
                     {error && <div>{error}</div>}
+                </li>
+                <li>
+                    <label htmlFor = "name">
+                        Name
+                    </label>
+                    <input 
+                    type = "name"
+                    name = "name"
+                    id="name"
+                    onChange={(e)=>setName(e.target.value)}
+                    />
                 </li>
                 <li>
                     <label htmlFor = "email">
@@ -61,13 +74,24 @@ function SigninScreen(props){
                     onChange={(e)=>setPassword(e.target.value)}/>
                 </li>
                 <li>
-                    <button type="submit" className="button primary">Sign In</button>
+                    <label htmlFor= "rePassword">
+                        Re-Enter Password
+                    </label>
+                    <input 
+                    type= "rePassword"
+                    name ="rePassword"                     
+                    id= "rePassword"
+                    onChange={(e)=>setRePassword(e.target.value)}/>
+                </li>
+                
+                <li>
+                    <button type="submit" className="button primary">Register</button>
                 </li>
                 <li>
-                    New to Amazonia?
+                    Already have an account?
                 </li>
                 <li>
-                    <Link to="/register" className="button secondary text-center">Create an account</Link>
+                    <Link to="/signin" className="button secondary text-center">Sign-In</Link>
                 </li>
 
             </ul>
@@ -81,4 +105,4 @@ function SigninScreen(props){
   
 }
 
-export default SigninScreen
+export default RegisterScreen

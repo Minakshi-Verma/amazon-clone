@@ -16,6 +16,7 @@ React.js || Redux || Node.js || Express || CSS || mongoDB || mongoose
 7. dotenv (using npm install dotenv (backend folder ))
 8. mongoose (using npm install mongoose)
 9. jsonwebtoken (using npm install jsonwebtoken)
+10. body-parser (using npm install body-parser) // body-parser is a middleware for express that provide data that user enters in post request in node application
 
 
 create config file in backend folder and connect the server to mongodb database. 

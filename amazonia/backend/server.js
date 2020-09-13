@@ -3,7 +3,9 @@ import data from "./data";
 import dotenv from "dotenv";
 import config from './config';
 import mongoose from "mongoose";
-import userRoute from "./routes/userRoute"
+import bodyParser from 'body-parser'
+import userRoute from "./routes/userRoute";
+
 
 dotenv.config()
 
@@ -18,6 +20,8 @@ mongoose.connect(mongodbUrl, {
 
 
 const app = express();
+// will be able to read data on the network
+app.use(bodyParser.json())
 
 app.use("/api/users", userRoute)
 
