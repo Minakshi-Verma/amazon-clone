@@ -1,8 +1,9 @@
 import React from 'react';
 import {BrowserRouter, Route, Link} from "react-router-dom";
 import HomeScreen from "./screen/HomeScreen";
-import ProductScreen from "./screen/ProductScreen"
-import CartScreen from "./screen/CartScreen"
+import ProductScreen from "./screen/ProductScreen";
+import CartScreen from "./screen/CartScreen";
+import SigninScreen from "./screen/SigninScreen"
 import './App.css';
 
 
@@ -26,8 +27,10 @@ document.querySelector(".sidebar").classList.remove("open")
                         <Link to="/">amazonia</Link>                       
                     </div>
                     <div className= "header-links">
-                        <a href = "cart.html">Cart</a>
-                        <a href = "signin.html">Sign In</a>
+                        
+                        <Link to="/cart">Cart</Link>
+                        <Link to="/signin">Sign in</Link>
+                        
                     </div>                
                 </header>
                 <aside className= "sidebar">
@@ -52,8 +55,9 @@ document.querySelector(".sidebar").classList.remove("open")
                     <div className="content">
                         <Route path="/product/:id" component={ProductScreen} />
                         <Route path= "/cart/:id?" component = {CartScreen}/>
+                        <Route path="/signin" component= {SigninScreen} />
                         <Route path="/" exact={true} component={HomeScreen} />
-                      
+                        
                        
                       
                     </div>                

@@ -13,9 +13,9 @@ React.js || Redux || Node.js || Express || CSS || mongoDB || mongoose
 4. redux-thunk  // to perform async operation in redux since redux run synchronously by default
 5. Axios <br />
 6. js.cookies package(using npm install js.cookie@2.1.4) // to save the items after refresh <br />
----Backend---<br />
-7. dotenv (using npm insatll dotenv)
+7. dotenv (using npm install dotenv (backend folder ))
 8. mongoose (using npm install mongoose)
+9. jsonwebtoken (using npm install jsonwebtoken)
 
 
 create config file in backend folder and connect the server to mongodb database. 
@@ -39,7 +39,7 @@ The _Database Schemas_ for the `users` resources are:
 | field   | data type        | metadata                    |
 |---------|------------------|-----------------------------|
 | name    | string           |required                     |
-| email   | string           |required,unique,, dropsdups  |
+| email   | string           |required,unique,dropsdups    |
 | password| string           |required                     |
 | isAdmin | boolean          |required, default:false      |
 

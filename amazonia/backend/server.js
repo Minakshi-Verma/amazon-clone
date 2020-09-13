@@ -7,7 +7,7 @@ import userRoute from "./routes/userRoute"
 
 dotenv.config()
 
-//Get access to mongodbrul
+//Database connection
 const mongodbUrl = config.MONGODB_URL;
 mongoose.connect(mongodbUrl, {
     useNewUrlParser: true,
