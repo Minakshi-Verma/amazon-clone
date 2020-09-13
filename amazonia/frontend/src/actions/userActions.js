@@ -7,7 +7,7 @@ const register = (name, email, password) =>async(dispatch, getState)=>{
     dispatch({type: USER_REGISTER_REQUEST, payload:{name, email, password}})
     try{
         const {data} = await axios.post('/api/users/register', {name, email, password})
-        console.log("from useraction",data.name)
+        console.log("from register useraction",data.name)
         dispatch({type: USER_REGISTER_SUCCESS, payload: data})
         //set the cookie to store the userdata 
         

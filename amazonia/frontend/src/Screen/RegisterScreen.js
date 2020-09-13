@@ -26,7 +26,7 @@ function RegisterScreen(props){
     //dispatch call for Registerin action
     const submitHandler = (e) =>{
         e.preventDefault()
-        dispatch(register(email,password))
+        dispatch(register(name,email,password))
     }
 
    
