@@ -10,10 +10,7 @@ const productSchema = new mongoose.Schema({
     countinStock:{type:Number,default:0, required: true},
     description:{type:String, required: true},
     rating:{type:Number, required: true},
-    numReviews:{type:Number, default:0, required: true},
-    
-
-   
+    numReviews:{type:Number, default:0, required: true},   
 })
 
 // In database productSchema will be saved with the name: Product
