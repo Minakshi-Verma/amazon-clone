@@ -25,7 +25,8 @@ http://mongodb.com/download-center/community
 
 
 ### Dev-Dependancies:
-1-@babel/cli @babel/core @babel/node @babel/preset-env
+1-@babel/cli @babel/core @babel/node @babel/preset-env 
+//we can use ES-6 syntax using that depenancy.Like we can ES-6 way of imports with node
 2-nodemon
 
 ### Scripts

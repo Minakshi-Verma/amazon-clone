@@ -12,8 +12,8 @@ const register = (name, email, password) =>async(dispatch, getState)=>{
         //set the cookie to store the userdata 
         
        
-        const {userSignin: {userInfo}}= getState()
-        Cookie.set(userInfo, JSON.stringify(data))
+        // const {userSignin: {userInfo}}= getState()
+        Cookie.set('userInfo', JSON.stringify(data))
     }
     catch(error){
        dispatch({type: USER_REGISTER_FAIL, payload: error.message}) 
